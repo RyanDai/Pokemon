@@ -1,3 +1,5 @@
+import "../styles/Title.scss";
+
 function Title() {
   return (
     <div>

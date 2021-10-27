@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import PokemonCard from "./PokemonCard";
 import { getAllPokemons } from "../api/api";
+import "../styles/PokemonGrid.scss"
 
 class PokemonGrid extends Component {
   constructor() {
@@ -62,7 +63,7 @@ class PokemonGrid extends Component {
     return (
       <Fragment>
         <div className="container">
-          <div style={{ minHeight: "800px" }}>
+          <div className="cardContainer">
             {this.state.pokemons.map((pokemon) => (
               <PokemonCard
                 key={pokemon.name}

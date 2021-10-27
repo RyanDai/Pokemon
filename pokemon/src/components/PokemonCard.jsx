@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPokemonByURL } from "../api/api";
+import "../styles/PokemonCard.scss";
 
 function PokemonCard(props) {
   const [pokemon, setPokemon] = useState({
@@ -7,6 +8,7 @@ function PokemonCard(props) {
     name: "",
     types: [],
     sprites: "",
+    url: "",
   });
 
   useEffect(() => {
@@ -17,18 +19,25 @@ function PokemonCard(props) {
         name: res.name,
         types: res.types,
         sprites: res.sprites.front_default,
+        url: props.url,
       });
     });
-  }, []);
+  });
 
   return (
-    <div>
-      <p>{pokemon.name}</p>
-      <p>{pokemon.order}</p>
-      <img src={pokemon.sprites} height="150px" width="150px" />
-      {pokemon.types.map((type) => {
-        return <p key={type.slot}>{type.type.name}</p>;
-      })}
+    <div className="pokemonCard">
+      <div className="cardContent">
+        <div className="orderBadge">{pokemon.order}</div>
+        <div className="name">{pokemon.name}</div>
+
+        <img src={pokemon.sprites} alt="loading sprite..." className="sprite" />
+        <div className="pokemonType">
+          {pokemon.types.map((type) => {
+            return <p key={type.slot}>{type.type.name}</p>;
+          })}
+        </div>
+        <div className="addedTimes">Added to 3 parties</div>
+      </div>
     </div>
   );
 }
