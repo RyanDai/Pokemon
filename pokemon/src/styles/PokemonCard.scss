@@ -51,6 +51,72 @@
     .pokemonType {
       display: flex;
       justify-content: space-evenly;
+
+      .type {
+        border-radius: 4px;
+        align-items: center;
+        padding: 4px 12px;
+      }
+
+      .grass {
+        background-color: green;
+      }
+
+      .poison {
+        background-color: purple;
+      }
+
+      .water {
+        background-color: blue;
+      }
+
+      .fire {
+        background-color: red;
+      }
+
+      .bug {
+        background-color: rosybrown;
+      }
+
+      .flying {
+        background-color: sandybrown;
+      }
+
+      .normal {
+        background-color: silver;
+      }
+
+      .electric {
+        background-color: yellow;
+      }
+
+      .ground {
+        background-color: brown;
+      }
+
+      .fairy {
+        background-color: palevioletred;
+      }
+
+      .fighting {
+        background-color: peru;
+      }
+
+      .psychic {
+        background-color: rebeccapurple;
+      }
+
+      .rock {
+        background-color: saddlebrown;
+      }
+
+      .steel {
+        background-color: gray;
+      }
+
+      .dragon {
+        background-color: lightblue;
+      }
     }
 
     .addedTimes {
@@ -61,4 +127,8 @@
       color: #000;
     }
   }
+}
+
+.cardSelected {
+  border: 2px solid #9dc7c0;
 }
