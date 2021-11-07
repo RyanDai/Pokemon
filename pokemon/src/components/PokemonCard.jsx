@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonByURL } from "../api/api";
 import { partyAdd, partyRemove } from "../actions/partyAction";
+import { addedCount } from "../actions/addedCountAction";
 import "../styles/PokemonCard.scss";
 import removeIcon from "../assets/remove.svg";
 
@@ -46,6 +47,7 @@ function PokemonCard(props) {
     if (props.page === "index") {
       if (!isInParty(pokemon.url) && selectedPokemons.length < 6) {
         dispatch(partyAdd({ url: pokemon.url, sprites: pokemon.sprites }));
+        dispatch(addedCount(pokemon.url));
         setSelected(true);
       } else {
         dispatch(partyRemove(pokemon.url));
