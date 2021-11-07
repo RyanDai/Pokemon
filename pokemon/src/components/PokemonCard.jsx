@@ -33,7 +33,6 @@ function PokemonCard(props) {
   }, []);
 
   useEffect(() => {
-    //console.log(selectedPokemons);
     if (isInParty(pokemon.url)) {
       setSelected(true);
     }

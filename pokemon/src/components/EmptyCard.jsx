@@ -6,8 +6,14 @@ function EmptyCard() {
   return (
     <div className={"pokemonCard"}>
       <div className="cardContent">
-        <img src={plus} alt="add pokemon" className="plus" />
-        <img src={emptyBall} alt="pokemon placeholder" className="sprite" />
+        <div className="plusContainer">
+          <img src={plus} alt="add pokemon" className="plus" />
+        </div>
+        <img
+          src={emptyBall}
+          alt="pokemon placeholder"
+          className="sprite emptyBall"
+        />
       </div>
     </div>
   );
