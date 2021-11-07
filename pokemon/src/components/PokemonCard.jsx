@@ -15,6 +15,7 @@ function PokemonCard(props) {
     url: "",
   });
   const [selected, setSelected] = useState(false);
+  const selectedPokemons = useSelector((state) => state.party.party);
 
   useEffect(() => {
     getPokemonByURL(props.url).then((res) => {
@@ -30,19 +31,37 @@ function PokemonCard(props) {
   }, [pokemon]);
 
   useEffect(() => {
-    if (selected) {
-      dispatch(partyAdd(pokemon.url));
-    } else {
-      dispatch(partyRemove(pokemon.url));
+    //console.log(selectedPokemons);
+    if (isInParty(pokemon.url)) {
+      setSelected(true);
     }
-  }, [selected]);
+  });
+
+  function isInParty(url) {
+    return selectedPokemons.find((pokemon) => pokemon.url === url);
+  }
 
   function toggleSelect() {
-    setSelected((selected) => !selected);
+    if (props.page === "index") {
+      if (!isInParty(pokemon.url) && selectedPokemons.length < 6) {
+        dispatch(partyAdd({ url: pokemon.url, sprites: pokemon.sprites }));
+        setSelected(true);
+      } else {
+        dispatch(partyRemove(pokemon.url));
+        setSelected(false);
+      }
+    }
   }
 
   function capitalizeString(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  //prepending # and 0 to number, e.g  5 -> #005
+  function handleOrderDisplay(num, places) {
+    return String(num)
+      .padStart(places, "0")
+      .padStart(places + 1, "#");
   }
 
   return (
@@ -51,7 +70,7 @@ function PokemonCard(props) {
       onClick={toggleSelect}
     >
       <div className="cardContent">
-        <div className="orderBadge">{pokemon.order}</div>
+        <div className="orderBadge">{handleOrderDisplay(pokemon.order, 3)}</div>
         <div className="name">{pokemon.name}</div>
 
         <img src={pokemon.sprites} alt="loading sprite..." className="sprite" />

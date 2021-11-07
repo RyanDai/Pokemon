@@ -69,6 +69,7 @@ class PokemonGrid extends Component {
                 key={pokemon.name}
                 name={pokemon.name}
                 url={pokemon.url}
+                page="index"
               />
             ))}
           </div>

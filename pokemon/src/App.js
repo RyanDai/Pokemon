@@ -6,6 +6,7 @@ import PokemonGrid from "./components/PokemonGrid";
 import Title from "./components/Title";
 import Party from "./components/Party";
 import PartyList from "./components/PartyList";
+import PartyMemberCount from "./components/PartyMemberCount";
 
 function App() {
   return (
@@ -16,13 +17,13 @@ function App() {
         <Route exact path="/">
           <Container>
             <Row>
-              <Col>
-                <Title />
+              <Col md={2}>
+                <Title page="index" />
               </Col>
               <Col xs={12} md={8}>
                 <PokemonGrid />
               </Col>
-              <Col>
+              <Col md={2}>
                 <PartyList />
               </Col>
             </Row>
@@ -31,14 +32,14 @@ function App() {
         <Route exact path="/party">
           <Container>
             <Row>
-              <Col>
-                <Title />
+              <Col md={2}>
+                <Title page="party" />
               </Col>
               <Col xs={12} md={8}>
                 <Party />
               </Col>
-              <Col>
-                <PartyList />
+              <Col md={2}>
+                <PartyMemberCount />
               </Col>
             </Row>
           </Container>

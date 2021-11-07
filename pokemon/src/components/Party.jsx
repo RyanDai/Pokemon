@@ -7,14 +7,14 @@ function Party() {
 
   const partyPokemons = useSelector((state) => state.party.party);
 
-  console.log(partyPokemons);
+  //console.log(partyPokemons);
 
   return (
     <Fragment>
       <div className="container">
         <div className="cardContainer">
           {partyPokemons.map((pokemon) => (
-            <PokemonCard key={pokemon} url={pokemon} />
+            <PokemonCard key={pokemon.url} url={pokemon.url} page="party" />
           ))}
         </div>
       </div>

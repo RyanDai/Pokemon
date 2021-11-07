@@ -7,7 +7,7 @@ const partyReducer = (state = initialState, action) => {
     case "PARTY_REMOVE":
       return {
         party: state.party.filter((pokemon) => {
-          return pokemon !== action.payload;
+          return pokemon.url !== action.payload;
         }),
       };
     default:

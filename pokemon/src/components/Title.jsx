@@ -1,10 +1,18 @@
 import "../styles/Title.scss";
 
-function Title() {
+function Title(props) {
   return (
-    <div>
-      <h1>Choose your team</h1>
-      <p>Scroll for more</p>
+    <div className="titleContainer">
+      {props.page === "index" ? (
+        <div>
+          <h1>Choose your team</h1>
+          <p>Scroll for more</p>
+        </div>
+      ) : (
+        <div>
+          <h1>Ash's party</h1>
+        </div>
+      )}
     </div>
   );
 }
