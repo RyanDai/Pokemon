@@ -1,5 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: "Work Sans";
+  src: local("Work Sans"),
+    url(./fonts/WorkSans-Italic-VariableFont_wght.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Work Sans";
+  src: local("Work Sans"),
+    url(./fonts/WorkSans-VariableFont_wght.ttf) format("truetype");
+}
+
 .App {
   text-align: center;
 }

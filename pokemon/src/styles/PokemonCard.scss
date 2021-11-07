@@ -45,6 +45,9 @@
       line-height: 28px;
       padding-top: 10px;
     }
+    @media screen and (max-width: 500px) {
+      left: 60px;
+    }
   }
 
   .index {
@@ -69,6 +72,13 @@
       width: 150px;
       bottom: 130px;
       left: 20px;
+
+      @media screen and (max-width: 500px) {
+        height: 75px;
+        width: 75px;
+        left: 34px;
+        bottom: 113px;
+      }
     }
 
     .name {
@@ -90,6 +100,11 @@
       height: 24px;
       text-align: center;
       margin: auto;
+      font-family: Work Sans;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 4px;
     }
 
     .pokemonType {
@@ -97,33 +112,38 @@
       justify-content: space-evenly;
 
       .type {
+        font-family: Work Sans;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
         border-radius: 4px;
         align-items: center;
         padding: 4px 12px;
+        color: #ffffff;
       }
 
       .grass {
-        background-color: green;
+        background-color: #8bc460;
       }
 
       .poison {
-        background-color: purple;
+        background-color: #94499b;
       }
 
       .water {
-        background-color: blue;
+        background-color: #6f92e9;
       }
 
       .fire {
-        background-color: red;
+        background-color: #e28544;
       }
 
       .bug {
-        background-color: rosybrown;
+        background-color: #abb642;
       }
 
       .flying {
-        background-color: sandybrown;
+        background-color: #a494ea;
       }
 
       .normal {
@@ -164,6 +184,7 @@
     }
 
     .addedTimes {
+      font-family: Work Sans;
       font-weight: normal;
       font-size: 12px;
       line-height: 14px;

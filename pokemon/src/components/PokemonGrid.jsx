@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PokemonCard from "./PokemonCard";
+import PageSwitch from "./PageSwitch";
 import { getAllPokemons } from "../api/api";
 import "../styles/PokemonGrid.scss";
 
@@ -82,6 +83,7 @@ class PokemonGrid extends Component {
             <span style={loadingTextCSS}>Loading...</span>
           </div>
         </div>
+        <PageSwitch page="Party" />
         <div>
           <div className="pagination">
             {this.state.pokemons.length}/{POKEMON_COUNT}

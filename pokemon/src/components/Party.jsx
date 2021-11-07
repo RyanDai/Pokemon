@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import PokemonCard from "./PokemonCard";
+import PageSwitch from "./PageSwitch";
 import { useDispatch, useSelector } from "react-redux";
 import EmptyCard from "./EmptyCard";
 
@@ -22,6 +23,7 @@ function Party() {
           ))}
         </div>
       </div>
+      <PageSwitch page="Dex" />
     </Fragment>
   );
 }

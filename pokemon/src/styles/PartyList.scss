@@ -8,6 +8,11 @@
     margin-top: 10px;
     width: 84px;
     height: 84px;
+
+    @media screen and (max-width: 500px) {
+      width: 42px;
+      height: 42px;
+    }
   }
 
   .ballImage {

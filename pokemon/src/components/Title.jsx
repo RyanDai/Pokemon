@@ -6,7 +6,6 @@ function Title(props) {
       {props.page === "index" ? (
         <div>
           <h1>Choose your team</h1>
-          <p>Scroll for more</p>
         </div>
       ) : (
         <div>

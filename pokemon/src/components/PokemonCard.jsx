@@ -78,8 +78,17 @@ function PokemonCard(props) {
     >
       <div className="cardContent">
         <div className="orderBadge">{handleOrderDisplay(pokemon.order, 3)}</div>
-        <div className="name">{pokemon.name}</div>
-
+        {props.page === "index" ? (
+          <div className="name">{pokemon.name}</div>
+        ) : (
+          <div
+            className="name"
+            contentEditable={true}
+            suppressContentEditableWarning={true}
+          >
+            {pokemon.name}
+          </div>
+        )}
         <img src={pokemon.sprites} alt="loading sprite..." className="sprite" />
         <div className="pokemonType">
           {pokemon.types.map((type) => {

@@ -1,0 +1,27 @@
+.switchContainer {
+  width: 75px;
+  height: 75px;
+  background-color: #68a89e;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: -10px -10px 4px rgba(255, 255, 255, 0.2),
+    10px 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 140px;
+
+  @media screen and (max-width: 500px) {
+    right: 20px;
+  }
+
+  .switchText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+  }
+}
