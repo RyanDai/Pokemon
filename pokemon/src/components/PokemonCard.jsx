@@ -19,6 +19,7 @@ function PokemonCard(props) {
   const [selected, setSelected] = useState(false);
 
   const selectedPokemons = useSelector((state) => state.party.party);
+  const counts = useSelector((state) => state.count.counts);
 
   useEffect(() => {
     getPokemonByURL(props.url).then((res) => {
@@ -31,7 +32,7 @@ function PokemonCard(props) {
         url: props.url,
       });
     });
-  }, []);
+  }, [props.url]);
 
   useEffect(() => {
     if (isInParty(pokemon.url)) {
@@ -101,7 +102,9 @@ function PokemonCard(props) {
             );
           })}
         </div>
-        <div className="addedTimes">Added to 3 parties</div>
+        <div className="addedTimes">
+          Added to {counts[pokemon.url] || 0} parties
+        </div>
       </div>
       <div className={`removeIcon ${props.page}`}>
         <img src={removeIcon} alt="" onClick={removeParty} />

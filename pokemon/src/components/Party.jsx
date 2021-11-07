@@ -1,16 +1,11 @@
 import { Fragment } from "react";
 import PokemonCard from "./PokemonCard";
 import PageSwitch from "./PageSwitch";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import EmptyCard from "./EmptyCard";
 
 function Party() {
-  const dispatch = useDispatch();
-
   const partyPokemons = useSelector((state) => state.party.party);
-
-  //console.log(partyPokemons);
-
   return (
     <Fragment>
       <div className="container">

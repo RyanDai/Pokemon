@@ -35,10 +35,7 @@ class PokemonGrid extends Component {
   handleObserver(entities, observer) {
     const y = entities[0].boundingClientRect.y;
     if (this.state.prevY > y) {
-      //const lastPhoto = this.state.pokemons[this.state.pokemons.length - 1];
-      //const curPage = lastPhoto.albumId;
       this.getPokemons();
-      //this.setState({ page: curPage });
     }
     this.setState({ prevY: y });
   }
