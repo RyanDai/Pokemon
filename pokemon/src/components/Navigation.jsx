@@ -23,7 +23,7 @@ function Navigation() {
                 PARTY
               </Link>
             </Button>
-            <img src={profile} alt="profile" />
+            <img src={profile} alt="profile" className="profileImage" />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -20,10 +20,10 @@ function App() {
               <Col md={2}>
                 <Title page="index" />
               </Col>
-              <Col xs={12} xs={{ order: 2 }} md={8} md={{ order: 1 }}>
+              <Col xs={(12, { order: 2 })} md={(8, { order: 1 })}>
                 <PokemonGrid />
               </Col>
-              <Col xs={{ order: 1 }} md={2} md={{ order: 2 }}>
+              <Col xs={{ order: 1 }} md={(2, { order: 2 })}>
                 <PartyList />
               </Col>
             </Row>
@@ -32,13 +32,13 @@ function App() {
         <Route exact path="/party">
           <Container>
             <Row>
-              <Col md={2}>
+              <Col xs={{ order: 1 }} md={2}>
                 <Title page="party" />
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={(12, { order: 2 })} md={(8, { order: 1 })}>
                 <Party />
               </Col>
-              <Col md={2}>
+              <Col xs={{ order: 1 }} md={(2, { order: 2 })}>
                 <PartyMemberCount />
               </Col>
             </Row>

@@ -14,7 +14,7 @@ function Party() {
             <PokemonCard key={pokemon.url} url={pokemon.url} page="party" />
           ))}
           {[...Array(6 - partyPokemons.length)].map((member, i) => (
-            <EmptyCard />
+            <EmptyCard key={i} />
           ))}
         </div>
       </div>
