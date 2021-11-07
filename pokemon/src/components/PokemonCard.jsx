@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPokemonByURL } from "../api/api";
 import { partyAdd, partyRemove } from "../actions/partyAction";
 import "../styles/PokemonCard.scss";
+import removeIcon from "../assets/remove.svg";
 
 function PokemonCard(props) {
   const dispatch = useDispatch();
@@ -15,20 +16,21 @@ function PokemonCard(props) {
     url: "",
   });
   const [selected, setSelected] = useState(false);
+
   const selectedPokemons = useSelector((state) => state.party.party);
 
   useEffect(() => {
     getPokemonByURL(props.url).then((res) => {
       setPokemon({
         ...pokemon,
-        order: res.order,
+        order: res.id,
         name: res.name,
         types: res.types,
         sprites: res.sprites.front_default,
         url: props.url,
       });
     });
-  }, [pokemon]);
+  }, []);
 
   useEffect(() => {
     //console.log(selectedPokemons);
@@ -41,7 +43,7 @@ function PokemonCard(props) {
     return selectedPokemons.find((pokemon) => pokemon.url === url);
   }
 
-  function toggleSelect() {
+  function handleCardClick() {
     if (props.page === "index") {
       if (!isInParty(pokemon.url) && selectedPokemons.length < 6) {
         dispatch(partyAdd({ url: pokemon.url, sprites: pokemon.sprites }));
@@ -51,6 +53,11 @@ function PokemonCard(props) {
         setSelected(false);
       }
     }
+  }
+
+  function removeParty() {
+    dispatch(partyRemove(pokemon.url));
+    setSelected(false);
   }
 
   function capitalizeString(string) {
@@ -67,7 +74,7 @@ function PokemonCard(props) {
   return (
     <div
       className={`pokemonCard ${selected ? "cardSelected" : ""}`}
-      onClick={toggleSelect}
+      onClick={handleCardClick}
     >
       <div className="cardContent">
         <div className="orderBadge">{handleOrderDisplay(pokemon.order, 3)}</div>
@@ -85,6 +92,9 @@ function PokemonCard(props) {
           })}
         </div>
         <div className="addedTimes">Added to 3 parties</div>
+      </div>
+      <div className={`removeIcon ${props.page}`}>
+        <img src={removeIcon} alt="" onClick={removeParty} />
       </div>
     </div>
   );

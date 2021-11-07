@@ -1,0 +1,24 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  width: 84px;
+  margin: auto;
+
+  .pokemonImage {
+    margin-top: 10px;
+    width: 84px;
+    height: 84px;
+  }
+
+  .ballImage {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: row;
+    width: 100%;
+  }
+}

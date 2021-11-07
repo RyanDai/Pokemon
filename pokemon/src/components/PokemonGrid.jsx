@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from "react";
 import PokemonCard from "./PokemonCard";
 import { getAllPokemons } from "../api/api";
-import "../styles/PokemonGrid.scss"
+import "../styles/PokemonGrid.scss";
+
+const POKEMON_COUNT = 1118;
 
 class PokemonGrid extends Component {
   constructor() {
@@ -81,9 +83,9 @@ class PokemonGrid extends Component {
           </div>
         </div>
         <div>
-          <p>
-            {this.state.pokemons.length}/{this.state.pokemons.length}
-          </p>
+          <div className="pagination">
+            {this.state.pokemons.length}/{POKEMON_COUNT}
+          </div>
         </div>
       </Fragment>
     );

@@ -7,3 +7,12 @@
     grid-template-columns: auto auto;
   }
 }
+
+.pagination {
+  position: fixed;
+  bottom: 10px;
+  left:50%;
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+}
